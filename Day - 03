@@ -1,0 +1,30 @@
+# Rollercoaster game
+
+print("Welcome to the python rollercoaster game!!")
+height = float(input("Enter your height in centimeter :"))
+bill = 0
+
+if height > 120 :
+    print("You are eligible to ride.")
+    age = int(input("Enter your age in years :"))
+    if age <= 12:
+        bill = 5
+        print("Child tickets are $5.")
+    elif 12 < age <= 18:
+        bill = 7
+        print("Youth tickets are $7.")
+    elif 18 < age <45:
+        bill = 12
+        print("Adults tickets are $12.")
+    elif 45 <= age < 55:
+        bill = 0
+    else :
+        print("Please enter the valid age !!!")
+    wants_photo = input("Enter 'yes' if you wants to take photos else 'no'.:").lower()
+    if wants_photo == 'yes':
+        #Add 3 more
+        bill += 3
+    print(f"Your Final Bill is ${bill}.")
+    print("Enjoy your riding !!!")
+else :
+    print("Sorry ! You have to grow taller for the ride !!!")
