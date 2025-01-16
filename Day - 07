@@ -1,0 +1,53 @@
+import random
+letters = ['a','b','c','d','e',','f'','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+numbers = ['1','2','3','4','5','6','7','8','9','0']
+symbols = ['~','!','@','#','$','%','^','&','*','(',')','{','}','/','?','>','<','_','-','=']
+letter_choice = int(input("How many letters would you like?  "))
+number_choice = int(input("How many numbers would you like?  "))
+symbol_choice = int(input("How many symbols would you like?  "))
+
+#Easy Level
+def easy():
+    password = ""
+
+    for char in range(0, letter_choice):
+        password += random.choice(letters)
+
+    for char in range(0, number_choice):
+        password += random.choice(numbers)
+
+    for char in range(0, symbol_choice):
+        password += random.choice(symbols)
+
+    print(f"Your Final password is : {password}")
+
+
+# Difficult level
+def difficult():
+    password_list = []
+
+    for char in range(0, letter_choice):
+        password_list.append(random.choice(letters))
+
+    for char in range(0, number_choice):
+        password_list.append(random.choice(numbers))
+
+    for char in range(0, symbol_choice):
+        password_list.append(random.choice(symbols))
+
+    random.shuffle(password_list)
+
+    password = ""
+
+    for char in password_list:
+        password += char
+
+    print(f"Your Final password is : {password}")
+
+user_choice = input("Select the level of password , 'Easy' or 'Hard' .").lower()
+if user_choice == 'easy':
+    easy()
+elif user_choice == 'hard':
+    difficult()
+else:
+    print("Invalid choice !!!")
